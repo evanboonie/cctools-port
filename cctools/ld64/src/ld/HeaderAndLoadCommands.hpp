@@ -1248,7 +1248,7 @@ uint8_t* HeaderAndLoadCommandsAtom<ppc64>::copyThreadsLoadCommand(uint8_t* p) co
 {
 	assert(_state.entryPoint != NULL);
 	pint_t start = _state.entryPoint->finalAddress();
-	macho_thread_command<ppc::P>* cmd = (macho_thread_command<ppc::P>*)p;
+	macho_thread_command<P>* cmd = (macho_thread_command<P>*)p;
 	cmd->set_cmd(LC_UNIXTHREAD);
 	cmd->set_cmdsize(threadLoadCommandSize());
 	cmd->set_flavor(5);				// PPC_THREAD_STATE64
